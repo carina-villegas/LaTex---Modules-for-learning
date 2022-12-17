@@ -1,0 +1,135 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{hyperref}% incluir referencias y links
+\usetheme{Copenhagen}
+\title{Curso \LaTeX{} desde 0}
+\author{Ing. Amb. Carina Villegas}
+\date{Julio 2021}
+
+\AtBeginSection
+ { 
+\begin{frame} 
+  \frametitle{Tabla de contenidos}
+  \tableofcontents[currentsection]
+\end{frame}
+}
+
+\AtBeginSubsection{ 
+\begin{frame}
+  \frametitle{Tabla de contenidos}
+  \tableofcontents[currentsection,currentsubsection]
+\end{frame}
+}
+
+\DeclareUnicodeCharacter{0301}{\LaTeX{}}
+
+\begin{document}
+\frame{\titlepage}
+ 
+\section{MÓDULO I: Introducción}
+\subsection{\LaTeX{} y \TeX}
+\begin{frame}{\LaTeX{} y \TeX}
+\LaTeX{} es un conjunto de macros escritos en \TeX{}  \\ % generalmente usado para documentos de tipo científico.
+\TeX{} es un sistema de tipografía.
+
+\begin{block}{Consecuentemente} %alertblock subraya, sólo block- transparencia
+\begin{itemize}
+\item No es un editor de texto tipo WYSIWYG (What You See Is What You Get).
+\item Tratamiento global del documento $\rightarrow$ facilidad para realizar tareas automáticas.
+\item Permite al autor no tener que preocuparse de los detalles tipográfico.
+\item Posee todas las características avanzadas de \TeX{}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\subsection{Historia}
+\begin{frame}{Historia}
+\justify
+\TeX{} fue creado por el profesor Donald E. Knuth, quién estaba muy descontento con varias pruebas de imprenta de alguno de sus ́últimos libros, la calidad no era la que esperaba.
+
+Por ese motivo decidió crear su propio lenguaje de tipografía, tras muchos años de estudio y programación desarrolló la primera versión de \TeX{}. Posteriormente, este fue adaptándose por varios desarrolladores, entre ellos Leslie Lamport, quién trabajó varios sistemas de documentación en TEX.
+
+\LaTeX en la actualidad porta una gran cantidad de paquetes, plantillas y comunidad de expertos creadores de contenido. 
+\end{frame}
+
+\subsection{Modelo WYSIWYG vs \LaTeX{}}
+\begin{frame}{Modelo WYSIWYG vs \LaTeX{}}
+   \begin{alertblock}{WYSIWYG}
+   \begin{itemize}
+       \item No diseñado normalmente para publicaciones profesionales (libros, catálogos, etc.).
+        \item Precio. \\ % (salvo trucos ilegales) suele ser extremadamente prohibitivo.
+        \item \textbf{Baja calidad de tipográfica.}\\
+        \item Alineación incorrecta.\\
+        \item No es posible escritura de fórmulas y ecuaciones avanzadas.\\
+        \item Inserción de figuras intuitivas destroza documentos.\\
+        \item .DOCX generado al abrirlo con otro programa es posible que no resulte el mismo archivo.
+   \end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Modelo WYSIWYG vs \LaTeX{}}
+\begin{exampleblock}{\LaTeX{}} % become an green block
+\begin{itemize}
+    \item Sistema tipográfico de alta calidad. % características diseñadas para crear documentación técnica y científica. % Tipografía es la técnica de escribir utilizando diferentes diseños y tipos de letras.
+    \item Gran sinergia con las fórmulas matemáticas.
+    \item Justificación de los textos es perfecta y correcta.
+    \item Se pueden hacer posicionamientos de tablero, manipulación de entornos profesionales y hasta escribir música.
+    \item Como punto negativo, es el aprendizaje, puesto que \textcolor{blue}{cuesta despegarse de la comodidad del editor común.}
+\end{itemize}
+\end{exampleblock}
+\end{frame}
+
+\subsection{Constituyentes}%%https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler
+\begin{frame}{Constituyentes}
+    \begin{block}{\centering{1. Compiladores de acuerdo al sistema operativo}}
+    \centering{
+    MiKTeX para Windows\\ %Miktex recomendable para Linux.
+    TeX Live y teTeX para Linux y otros similares a UNIX\\
+    Redistribución MacTeX de TeX Live para macOS\\
+    proTeXt es basado en MiKTeX\\}
+    \end{block}
+ \centering$\downarrow$\\
+ 
+ \begin{block}{\centering{2. Editor de texto ASCII}} % American Standard Code for Information Interchange, is a character encoding standard for electronic communication. 
+   \centering
+   {
+    \textbf{Open source:} AUCTEX, GNU TeXmacs, Gummi, Kile, LaTeXila, MeWa, TeXShop, TeXnicCenter, Texmaker, TeXstudio, TeXworks
+    \textbf{Freeware:} LEd, WinShell %%Freeware is software that is available for use at no monetary cost or for an optional fee, but usually (although not necessarily) closed source with one or more restricted usage rights
+    \textbf{Proprietary/Shareware:} Inlage, Scientific WorkPlace, WinEdt %% Shareware is a type of proprietary software which is initially shared by the owner for trial use at little or no cost with usually limited functionality or incomplete\\
+    }
+\end{block}   
+\end{frame}
+ 
+\begin{frame}{Flujo para la compilación de un documento \LaTeX{}}
+\centering
+\includegraphics [scale=0.7]{Graphics/Compilation flow.PNG}
+\end{frame}
+
+\subsection{Overleaf} 
+\begin{frame}{Otra opción: Overleaf y su interfaz}
+    \begin{figure}
+        \centering
+        \includegraphics[width=.8\textwidth]{Graphics/lOGO OVERLIEF.png}
+        \label{fig:my_label}
+    \end{figure}
+    \begin{flushright}
+    \tiny{\url{https://www.overleaf.com/project/60cbc369b7c7fc406f593179}}\\
+    \tiny{\url{https://www.overleaf.com/latex/templates}}
+    \end{flushright}
+\end{frame}
+
+\begin{frame}
+    Carina Villegas Lituma\\ 
+    
+    \textit{INGENIERA AMBIENTAL}\\ 
+    
+    Correo: taniac.villegasl@gmail.com\\
+    
+\end{frame}
+
+Referencias:
+https://www.ucm.es/data/cont/docs/1346-2019-04-12-BaSix%20LaTeX%20ba%CC%81sico%20con%20ejercicios%20resueltos%20-%20Noir16.pdf
+documento descargado como LaTex
+\end{document}
